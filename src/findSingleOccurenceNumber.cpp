@@ -28,6 +28,7 @@ int findSingleOccurenceNumber(int *A, int len) {
 		if (c[i] == 1){
 			return i;
 		}
+	return 0;
 
 
 }

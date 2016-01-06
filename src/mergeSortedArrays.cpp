@@ -22,5 +22,8 @@ struct transaction {
 };
 
 struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct transaction *B, int BLen) {
+	if (A == NULL || ALen < 0 || B == NULL || BLen < 0)
+		return NULL;
+
 	return NULL;
 }
