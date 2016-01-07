@@ -59,12 +59,15 @@ struct transaction * sortedArraysCommonElements(struct transaction *A, int ALen,
 		len = BLen;
 		max = ALen;
 	}
-	struct transaction *C;
+	struct transaction *C=NULL;
 	C = (struct transaction *)malloc(sizeof(struct transaction) * len);
+	C[0].amount = -1;
+	
 	for (int i = 0; i<max; i++)
 	{
 		for (int j = i; j < len; j++){
 			if (structCmp(A[i], B[j])){
+				//C = (struct transaction *) realloc(C, sizeof(A[i]) + 1);
 				C[k] = A[i];
 				k++;
 
@@ -72,8 +75,8 @@ struct transaction * sortedArraysCommonElements(struct transaction *A, int ALen,
 		}
 
 	}
-	if (C == NULL)
-		return nullptr;
+	if (C[0].amount ==-1) 
+		return NULL;
 	return C;
 
 }
